@@ -1,0 +1,158 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f2f2; /* Rose clair */
+}
+
+/* Header avec le logo */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 50px;
+    color: #ff66b2; /* Rose Sakura */
+    font-family: 'Noto Serif JP', serif; /* Police japonaise */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ff66b2; /* Rose Sakura */
+}
+
+/* Section Accueil avec un fond Sakura plein écran */
+.sakura-background {
+    background-image: url('sakura-background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 100vh; /* Remplit tout l'écran */
+    position: relative; /* Pour permettre aux pétales de se placer correctement */
+    overflow: hidden; /* Cache tout débordement */
+}
+
+/* Pour garder les pétales au-dessus de tout */
+.sakura {
+    position: absolute; /* Change de fixed à absolute */
+    top: -10px; /* Reste toujours en haut */
+    width: 100px;  /* Ajuste la taille des pétales */
+    height: 100px; /* Ajuste la taille des pétales */
+    background-image: url('sakura-petal.png'); /* Assure-toi que l'image est correcte */
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+    z-index: 9999;
+    pointer-events: none; /* Les pétales ne bloquent pas les clics sur la page */
+}
+
+/* Style pour la section Jeux en Live */
+#jeux-en-live {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#jeux-en-live h2 {
+    color: #ff66b2; /* Rose Sakura */
+    margin-bottom: 30px;
+}
+
+.jeux-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.jeu {
+    background-color: #f8ebf0; /* Rose pâle */
+    border: 1px solid #ff66b2; /* Bordure rose */
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px; /* Ajuste la largeur des blocs de jeux */
+    transition: transform 0.3s;
+}
+
+.jeu:hover {
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+.jeu h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.jeu p {
+    color: #666;
+}
+
+/* Section Réseaux sociaux */
+#reseaux {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#reseaux h2 {
+    color: #ff66b2; /* Rose Sakura */
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffebf0; /* Rose pâle */
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ff66b2; /* Rose Sakura */
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg); /* Descente jusqu'en bas de la fenêtre */
+    }
+}
